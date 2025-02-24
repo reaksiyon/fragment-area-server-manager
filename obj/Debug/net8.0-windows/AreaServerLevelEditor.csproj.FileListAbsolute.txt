@@ -1,0 +1,17 @@
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\bin\Debug\net8.0-windows\AreaServerLevelEditor.exe
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\bin\Debug\net8.0-windows\AreaServerLevelEditor.deps.json
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\bin\Debug\net8.0-windows\AreaServerLevelEditor.runtimeconfig.json
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\bin\Debug\net8.0-windows\AreaServerLevelEditor.dll
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\bin\Debug\net8.0-windows\AreaServerLevelEditor.pdb
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.Form1.resources
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.AssemblyInfo.cs
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.dll
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\refint\AreaServerLevelEditor.dll
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.pdb
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.genruntimeconfig.cache
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\ref\AreaServerLevelEditor.dll
+C:\Users\PC\source\repos\AreaServerLevelEditor\AreaServerLevelEditor\obj\Debug\net8.0-windows\AreaServerLevelEditor.Properties.Resources.resources
