@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Projects\\fragment-area-server-manager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B0913C8-4758-49CD-8568-C80B9F3B5B25}|AreaServerLevelEditor.csproj|C:\\Projects\\fragment-area-server-manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4B0913C8-4758-49CD-8568-C80B9F3B5B25}|AreaServerLevelEditor.csproj|c:\\projects\\fragment-area-server-manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4B0913C8-4758-49CD-8568-C80B9F3B5B25}|AreaServerLevelEditor.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -22,12 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -51,8 +47,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAPcBAAAAAAAAAAAewA4CAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T01:13:11.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T01:13:11.345Z"
             },
             {
               "$type": "Document",
@@ -65,6 +60,10 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T01:13:15.08Z",
               "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             }
           ]
         }
