@@ -169,7 +169,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(22, 183);
+            label4.Location = new Point(26, 164);
             label4.Name = "label4";
             label4.Size = new Size(72, 15);
             label4.TabIndex = 8;
@@ -306,7 +306,7 @@
             // ServerLevelEditButton
             // 
             ServerLevelEditButton.Enabled = false;
-            ServerLevelEditButton.Location = new Point(165, 181);
+            ServerLevelEditButton.Location = new Point(165, 160);
             ServerLevelEditButton.Name = "ServerLevelEditButton";
             ServerLevelEditButton.Size = new Size(75, 23);
             ServerLevelEditButton.TabIndex = 41;
@@ -327,7 +327,7 @@
             // 
             // ServerLevelUpDown
             // 
-            ServerLevelUpDown.Location = new Point(104, 181);
+            ServerLevelUpDown.Location = new Point(104, 160);
             ServerLevelUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
             ServerLevelUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             ServerLevelUpDown.Name = "ServerLevelUpDown";
@@ -468,7 +468,7 @@
             // helloMsgButton
             // 
             helloMsgButton.AutoSize = true;
-            helloMsgButton.Location = new Point(22, 214);
+            helloMsgButton.Location = new Point(26, 200);
             helloMsgButton.Name = "helloMsgButton";
             helloMsgButton.Size = new Size(64, 15);
             helloMsgButton.TabIndex = 57;
@@ -476,7 +476,7 @@
             // 
             // helloMsgTB
             // 
-            helloMsgTB.Location = new Point(104, 210);
+            helloMsgTB.Location = new Point(104, 197);
             helloMsgTB.MaxLength = 100;
             helloMsgTB.Name = "helloMsgTB";
             helloMsgTB.Size = new Size(155, 23);
@@ -485,7 +485,7 @@
             // helloMsgBtn
             // 
             helloMsgBtn.Enabled = false;
-            helloMsgBtn.Location = new Point(265, 210);
+            helloMsgBtn.Location = new Point(265, 197);
             helloMsgBtn.Name = "helloMsgBtn";
             helloMsgBtn.Size = new Size(75, 23);
             helloMsgBtn.TabIndex = 59;

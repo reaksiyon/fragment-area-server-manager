@@ -17,7 +17,7 @@ namespace AreaServerLevelEditor
             Program.SetServerName(ServerNameTextBox.Text);
 
             serverNameLbl.Text = Program.GetServerName(Program.processes);
-            MessageBox.Show(Program.GetServerName(Program.processes));
+            // MessageBox.Show(Program.GetServerName(Program.processes));
             Program.ReloadUI();
         }
 
