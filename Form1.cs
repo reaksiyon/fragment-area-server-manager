@@ -55,7 +55,6 @@ namespace AreaServerLevelEditor
             LandSettingsApplyButton.Enabled = true;
             //SetServerSymbolButton.Enabled = true;
             helloMsgBtn.Enabled = true;
-            AutoFillButton.Enabled = true;
         }
 
         private void serverNameLbl_Click(object sender, EventArgs e)
@@ -83,21 +82,6 @@ namespace AreaServerLevelEditor
         private void serverStatusPB_Click(object sender, EventArgs e)
         {
 
-        }
-        private void AutoFillButton_Click(object sender, EventArgs e)
-        {
-            LavaLvTb.Value = 70;
-            FieryLvTb.Value = 60;
-            SandLvTb.Value = 25;
-            DesertLvTb.Value = 20;
-            WoodsLvTb.Value = 25;
-            SnowLvTb.Value = 30;
-            IceLvTb.Value = 40;
-            RockyLvTb.Value = 50;
-            PlainsLvTb.Value = 10;
-            SwampLvTb.Value = 15;
-            GrassLvTb.Value = 3;
-            machiveLvTb.Value = 35;
         }
     }
 }

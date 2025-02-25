@@ -70,7 +70,6 @@
             helloMsgButton = new Label();
             helloMsgTB = new TextBox();
             helloMsgBtn = new Button();
-            AutoFillButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)serverStatusPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -116,11 +115,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 43);
+            label1.Location = new Point(21, 43);
             label1.Name = "label1";
-            label1.Size = new Size(73, 15);
+            label1.Size = new Size(77, 15);
             label1.TabIndex = 2;
-            label1.Text = "Town Name:";
+            label1.Text = "Server Name:";
             // 
             // label2
             // 
@@ -163,9 +162,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(22, 127);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(77, 15);
             label3.TabIndex = 7;
-            label3.Text = "Town Name:";
+            label3.Text = "Server Name:";
             // 
             // label4
             // 
@@ -494,17 +493,6 @@
             helloMsgBtn.UseVisualStyleBackColor = true;
             helloMsgBtn.Click += helloMsgBtn_Click;
             // 
-            // AutoFillButton
-            // 
-            AutoFillButton.Enabled = false;
-            AutoFillButton.Location = new Point(277, 386);
-            AutoFillButton.Name = "AutoFillButton";
-            AutoFillButton.Size = new Size(92, 23);
-            AutoFillButton.TabIndex = 60;
-            AutoFillButton.Text = "Auto-Fill";
-            AutoFillButton.UseVisualStyleBackColor = true;
-            AutoFillButton.Click += AutoFillButton_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -512,7 +500,6 @@
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(798, 448);
-            Controls.Add(AutoFillButton);
             Controls.Add(helloMsgBtn);
             Controls.Add(helloMsgTB);
             Controls.Add(helloMsgButton);
@@ -624,6 +611,5 @@
         private Label helloMsgButton;
         private TextBox helloMsgTB;
         private Button helloMsgBtn;
-        private Button AutoFillButton;
     }
 }
