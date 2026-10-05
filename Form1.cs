@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace AreaServerLevelEditor
 {
     public partial class Form1 : Form
@@ -169,17 +171,40 @@ namespace AreaServerLevelEditor
             if (specialEventSelector.SelectedIndex <= 0) return;
             var selected = SpecialEvents[specialEventSelector.SelectedIndex - 1];
             var answer = MessageBox.Show(
-                "This change requires AREA SERVER to restart.\r\nAREA SERVER will be closed. Do you approve?",
+                "This change requires AREA SERVER to restart.\r\nAREA SERVER will be restarted. Do you approve?",
                 "Restart AREA SERVER", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (answer != DialogResult.Yes) return;
             Directory.CreateDirectory(Path.GetDirectoryName(EventDateFile)!);
             File.WriteAllText(EventDateFile, selected.Date);
+            RestartAreaServer();
+            specialEventStatus.Text = $"Active: {selected.Name}\r\nLobby date: {selected.Date}\r\nAREA SERVER restarted. Reconnect the client.";
+            specialEventStatus.ForeColor = Color.Gold;
+        }
+
+        private static void RestartAreaServer()
+        {
+            string? executable = null;
+            try { executable = Program.process?.MainModule?.FileName; } catch { }
             if (Program.process is { HasExited: false })
             {
-                try { Program.process.Kill(); } catch { }
+                try
+                {
+                    Program.process.Kill();
+                    Program.process.WaitForExit(5000);
+                }
+                catch { }
             }
-            specialEventStatus.Text = $"Active: {selected.Name}\r\nLobby date: {selected.Date}\r\nRestart AREA SERVER before reconnecting.";
-            specialEventStatus.ForeColor = Color.Gold;
+
+            if (string.IsNullOrWhiteSpace(executable) || !File.Exists(executable)) return;
+            try
+            {
+                Process.Start(new ProcessStartInfo(executable)
+                {
+                    WorkingDirectory = Path.GetDirectoryName(executable)!,
+                    UseShellExecute = true
+                });
+            }
+            catch { }
         }
 
         private void DisableEventDate()
