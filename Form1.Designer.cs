@@ -71,6 +71,11 @@
             helloMsgTB = new TextBox();
             helloMsgBtn = new Button();
             AutoFillButton = new Button();
+            chatPanel = new GroupBox();
+            chatLog = new ListBox();
+            onlinePlayersPanel = new GroupBox();
+            onlinePlayersList = new ListBox();
+            playerDetails = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)serverStatusPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -87,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)GrassLvTb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SwampLvTb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PlainsLvTb).BeginInit();
+            chatPanel.SuspendLayout();
+            onlinePlayersPanel.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -505,13 +512,81 @@
             AutoFillButton.UseVisualStyleBackColor = true;
             AutoFillButton.Click += AutoFillButton_Click;
             // 
+            // chatPanel
+            // 
+            chatPanel.BackColor = Color.FromArgb(30, 30, 30);
+            chatPanel.Controls.Add(chatLog);
+            chatPanel.ForeColor = Color.White;
+            chatPanel.Location = new Point(1070, 12);
+            chatPanel.Name = "chatPanel";
+            chatPanel.Size = new Size(330, 424);
+            chatPanel.TabIndex = 61;
+            chatPanel.TabStop = false;
+            chatPanel.Text = "CHAT LOG";
+            // 
+            // chatLog
+            // 
+            chatLog.BackColor = Color.FromArgb(28, 28, 28);
+            chatLog.BorderStyle = BorderStyle.FixedSingle;
+            chatLog.Dock = DockStyle.Fill;
+            chatLog.Font = new Font("Segoe UI", 9F);
+            chatLog.ForeColor = Color.White;
+            chatLog.FormattingEnabled = true;
+            chatLog.HorizontalScrollbar = true;
+            chatLog.ItemHeight = 15;
+            chatLog.Location = new Point(3, 19);
+            chatLog.Name = "chatLog";
+            chatLog.Size = new Size(324, 402);
+            chatLog.TabIndex = 0;
+            // 
+            // onlinePlayersPanel
+            // 
+            onlinePlayersPanel.BackColor = Color.FromArgb(30, 30, 30);
+            onlinePlayersPanel.Controls.Add(playerDetails);
+            onlinePlayersPanel.Controls.Add(onlinePlayersList);
+            onlinePlayersPanel.ForeColor = Color.White;
+            onlinePlayersPanel.Location = new Point(812, 12);
+            onlinePlayersPanel.Name = "onlinePlayersPanel";
+            onlinePlayersPanel.Size = new Size(250, 424);
+            onlinePlayersPanel.TabIndex = 62;
+            onlinePlayersPanel.TabStop = false;
+            onlinePlayersPanel.Text = "ONLINE PLAYERS";
+            // 
+            // onlinePlayersList
+            // 
+            onlinePlayersList.BackColor = Color.FromArgb(28, 28, 28);
+            onlinePlayersList.BorderStyle = BorderStyle.FixedSingle;
+            onlinePlayersList.ForeColor = Color.White;
+            onlinePlayersList.FormattingEnabled = true;
+            onlinePlayersList.ItemHeight = 15;
+            onlinePlayersList.Location = new Point(8, 22);
+            onlinePlayersList.Name = "onlinePlayersList";
+            onlinePlayersList.Size = new Size(234, 188);
+            onlinePlayersList.TabIndex = 0;
+            onlinePlayersList.SelectedIndexChanged += OnlinePlayersList_SelectedIndexChanged;
+            // 
+            // playerDetails
+            // 
+            playerDetails.BackColor = Color.FromArgb(20, 20, 20);
+            playerDetails.BorderStyle = BorderStyle.FixedSingle;
+            playerDetails.Font = new Font("Segoe UI", 9F);
+            playerDetails.ForeColor = Color.White;
+            playerDetails.Location = new Point(8, 218);
+            playerDetails.Name = "playerDetails";
+            playerDetails.Padding = new Padding(8);
+            playerDetails.Size = new Size(234, 196);
+            playerDetails.TabIndex = 1;
+            playerDetails.Text = "Select a player to view profile details.";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(798, 448);
+            ClientSize = new Size(1412, 448);
+            Controls.Add(onlinePlayersPanel);
+            Controls.Add(chatPanel);
             Controls.Add(AutoFillButton);
             Controls.Add(helloMsgBtn);
             Controls.Add(helloMsgTB);
@@ -557,6 +632,7 @@
             Controls.Add(pictureBox1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            MinimumSize = new Size(1428, 487);
             Name = "Form1";
             Text = "Area Server Manager v1.0 by reaksiyon1337";
             Load += Form1_Load;
@@ -576,6 +652,8 @@
             ((System.ComponentModel.ISupportInitialize)GrassLvTb).EndInit();
             ((System.ComponentModel.ISupportInitialize)SwampLvTb).EndInit();
             ((System.ComponentModel.ISupportInitialize)PlainsLvTb).EndInit();
+            chatPanel.ResumeLayout(false);
+            onlinePlayersPanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -583,6 +661,11 @@
         #endregion
 
         private PictureBox pictureBox1;
+        private GroupBox chatPanel;
+        private ListBox chatLog;
+        private GroupBox onlinePlayersPanel;
+        private ListBox onlinePlayersList;
+        private Label playerDetails;
         private PictureBox serverStatusPB;
         private Label label1;
         private Label label2;
