@@ -29,6 +29,9 @@ internal sealed class PacketLoggerClient : IDisposable
 
     public Task StartAsync()
     {
+        if (process is { HasExited: false })
+            return Task.CompletedTask;
+
         string? executable = FindLogger();
         if (executable is null)
         {
@@ -38,6 +41,7 @@ internal sealed class PacketLoggerClient : IDisposable
 
         try
         {
+            StopStaleLoggers(executable);
             process = new Process
             {
                 StartInfo = new ProcessStartInfo(executable)
@@ -63,6 +67,33 @@ internal sealed class PacketLoggerClient : IDisposable
             onStatus("Logger could not be started: " + ex.Message);
         }
         return Task.CompletedTask;
+    }
+
+    private static void StopStaleLoggers(string executable)
+    {
+        string expectedPath = Path.GetFullPath(executable);
+        foreach (Process existing in Process.GetProcessesByName("AreaServerDataEditor"))
+        {
+            try
+            {
+                string? runningPath = existing.MainModule?.FileName;
+                if (runningPath is null ||
+                    !Path.GetFullPath(runningPath).Equals(expectedPath, StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                existing.Kill(true);
+                existing.WaitForExit(3000);
+            }
+            catch
+            {
+                // A logger started with higher privileges cannot be stopped here.
+                // Starting the new logger will report the pipe conflict normally.
+            }
+            finally
+            {
+                existing.Dispose();
+            }
+        }
     }
 
     private void ParseLine(string line)

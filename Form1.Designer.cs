@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            serverStatusPB = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            serverNameLbl = new Label();
-            levelLbl = new Label();
-            ServerNameTextBox = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
             pictureBox3 = new PictureBox();
             label5 = new Label();
             label6 = new Label();
@@ -50,10 +42,7 @@
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
-            ServerNameEditButton = new Button();
-            ServerLevelEditButton = new Button();
             LandSettingsApplyButton = new Button();
-            ServerLevelUpDown = new NumericUpDown();
             LavaLvTb = new NumericUpDown();
             FieryLvTb = new NumericUpDown();
             SandLvTb = new NumericUpDown();
@@ -67,19 +56,51 @@
             SwampLvTb = new NumericUpDown();
             PlainsLvTb = new NumericUpDown();
             connectButton = new Button();
-            helloMsgButton = new Label();
-            helloMsgTB = new TextBox();
-            helloMsgBtn = new Button();
             AutoFillButton = new Button();
             chatPanel = new GroupBox();
             chatLog = new ListBox();
             onlinePlayersPanel = new GroupBox();
-            onlinePlayersList = new ListBox();
             playerDetails = new Label();
+            onlinePlayersList = new ListBox();
+            mainTabs = new TabControl();
+            editorTab = new TabPage();
+            label1 = new Label();
+            label2 = new Label();
+            serverNameLbl = new Label();
+            levelLbl = new Label();
+            label3 = new Label();
+            ServerNameTextBox = new TextBox();
+            ServerNameEditButton = new Button();
+            label4 = new Label();
+            ServerLevelUpDown = new NumericUpDown();
+            ServerLevelEditButton = new Button();
+            helloMsgButton = new Label();
+            helloMsgTB = new TextBox();
+            helloMsgBtn = new Button();
+            serverStatusPB = new PictureBox();
+            landTab = new TabPage();
+            logsTab = new TabPage();
+            eventTab = new TabPage();
+            specialEventPanel = new GroupBox();
+            eventDescription = new Label();
+            specialEventSelector = new ComboBox();
+            applyEventButton = new Button();
+            useRealDateButton = new Button();
+            specialEventStatus = new Label();
+            miscTab = new TabPage();
+            miscPanel = new GroupBox();
+            chatTimestampsCheckBox = new CheckBox();
+            clearChatButton = new Button();
+            saveChatButton = new Button();
+            miscPlayerCountLabel = new Label();
+            toolBarPanel = new Panel();
+            areaEditorButton = new Button();
+            landSettingsButton = new Button();
+            logsButton = new Button();
+            eventSystemButton = new Button();
+            miscsButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)serverStatusPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ServerLevelUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LavaLvTb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FieryLvTb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SandLvTb).BeginInit();
@@ -94,6 +115,17 @@
             ((System.ComponentModel.ISupportInitialize)PlainsLvTb).BeginInit();
             chatPanel.SuspendLayout();
             onlinePlayersPanel.SuspendLayout();
+            mainTabs.SuspendLayout();
+            editorTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ServerLevelUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)serverStatusPB).BeginInit();
+            landTab.SuspendLayout();
+            logsTab.SuspendLayout();
+            eventTab.SuspendLayout();
+            specialEventPanel.SuspendLayout();
+            miscTab.SuspendLayout();
+            miscPanel.SuspendLayout();
+            toolBarPanel.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -109,80 +141,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // serverStatusPB
-            // 
-            serverStatusPB.BackgroundImageLayout = ImageLayout.None;
-            serverStatusPB.Image = Properties.Resources.bg_window_offline;
-            serverStatusPB.Location = new Point(12, 12);
-            serverStatusPB.Name = "serverStatusPB";
-            serverStatusPB.Size = new Size(342, 363);
-            serverStatusPB.TabIndex = 1;
-            serverStatusPB.TabStop = false;
-            serverStatusPB.Click += serverStatusPB_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(22, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Town Name:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(21, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Server Level:";
-            // 
-            // serverNameLbl
-            // 
-            serverNameLbl.AutoSize = true;
-            serverNameLbl.Location = new Point(104, 43);
-            serverNameLbl.Name = "serverNameLbl";
-            serverNameLbl.Size = new Size(78, 15);
-            serverNameLbl.TabIndex = 4;
-            serverNameLbl.Text = "Unconnected";
-            serverNameLbl.Click += serverNameLbl_Click;
-            // 
-            // levelLbl
-            // 
-            levelLbl.AutoSize = true;
-            levelLbl.Location = new Point(104, 68);
-            levelLbl.Name = "levelLbl";
-            levelLbl.Size = new Size(13, 15);
-            levelLbl.TabIndex = 5;
-            levelLbl.Text = "0";
-            // 
-            // ServerNameTextBox
-            // 
-            ServerNameTextBox.Location = new Point(104, 123);
-            ServerNameTextBox.MaxLength = 20;
-            ServerNameTextBox.Name = "ServerNameTextBox";
-            ServerNameTextBox.Size = new Size(155, 23);
-            ServerNameTextBox.TabIndex = 6;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(22, 127);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Town Name:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(26, 164);
-            label4.Name = "label4";
-            label4.Size = new Size(72, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Server Level:";
-            // 
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.land_window;
@@ -195,7 +153,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(118, 275);
+            label5.Location = new Point(126, 283);
             label5.Name = "label5";
             label5.Size = new Size(48, 15);
             label5.TabIndex = 11;
@@ -204,7 +162,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(117, 304);
+            label6.Location = new Point(125, 312);
             label6.Name = "label6";
             label6.Size = new Size(49, 15);
             label6.TabIndex = 13;
@@ -213,7 +171,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(116, 333);
+            label7.Location = new Point(124, 341);
             label7.Name = "label7";
             label7.Size = new Size(50, 15);
             label7.TabIndex = 15;
@@ -222,7 +180,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(109, 360);
+            label8.Location = new Point(117, 368);
             label8.Name = "label8";
             label8.Size = new Size(57, 15);
             label8.TabIndex = 17;
@@ -231,7 +189,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(212, 275);
+            label9.Location = new Point(220, 283);
             label9.Name = "label9";
             label9.Size = new Size(61, 15);
             label9.TabIndex = 19;
@@ -240,7 +198,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(218, 304);
+            label10.Location = new Point(226, 312);
             label10.Name = "label10";
             label10.Size = new Size(53, 15);
             label10.TabIndex = 21;
@@ -249,7 +207,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(232, 333);
+            label11.Location = new Point(240, 341);
             label11.Name = "label11";
             label11.Size = new Size(39, 15);
             label11.TabIndex = 23;
@@ -258,7 +216,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(218, 362);
+            label12.Location = new Point(226, 370);
             label12.Name = "label12";
             label12.Size = new Size(56, 15);
             label12.TabIndex = 25;
@@ -267,7 +225,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(340, 275);
+            label13.Location = new Point(348, 283);
             label13.Name = "label13";
             label13.Size = new Size(55, 15);
             label13.TabIndex = 27;
@@ -276,7 +234,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(332, 304);
+            label14.Location = new Point(340, 312);
             label14.Name = "label14";
             label14.Size = new Size(63, 15);
             label14.TabIndex = 29;
@@ -285,7 +243,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(343, 333);
+            label15.Location = new Point(351, 341);
             label15.Name = "label15";
             label15.Size = new Size(52, 15);
             label15.TabIndex = 31;
@@ -294,33 +252,11 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(325, 362);
+            label16.Location = new Point(333, 370);
             label16.Name = "label16";
             label16.Size = new Size(70, 15);
             label16.TabIndex = 33;
             label16.Text = "Machine Lv:";
-            // 
-            // ServerNameEditButton
-            // 
-            ServerNameEditButton.Enabled = false;
-            ServerNameEditButton.Location = new Point(265, 123);
-            ServerNameEditButton.Name = "ServerNameEditButton";
-            ServerNameEditButton.Size = new Size(75, 23);
-            ServerNameEditButton.TabIndex = 40;
-            ServerNameEditButton.Text = "Apply";
-            ServerNameEditButton.UseVisualStyleBackColor = true;
-            ServerNameEditButton.Click += ServerNameEditButton_Click;
-            // 
-            // ServerLevelEditButton
-            // 
-            ServerLevelEditButton.Enabled = false;
-            ServerLevelEditButton.Location = new Point(165, 160);
-            ServerLevelEditButton.Name = "ServerLevelEditButton";
-            ServerLevelEditButton.Size = new Size(75, 23);
-            ServerLevelEditButton.TabIndex = 41;
-            ServerLevelEditButton.Text = "Apply";
-            ServerLevelEditButton.UseVisualStyleBackColor = true;
-            ServerLevelEditButton.Click += ServerLevelEditButton_Click;
             // 
             // LandSettingsApplyButton
             // 
@@ -332,16 +268,6 @@
             LandSettingsApplyButton.Text = "Apply";
             LandSettingsApplyButton.UseVisualStyleBackColor = true;
             LandSettingsApplyButton.Click += LandSettingsApplyButton_Click;
-            // 
-            // ServerLevelUpDown
-            // 
-            ServerLevelUpDown.Location = new Point(104, 160);
-            ServerLevelUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
-            ServerLevelUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            ServerLevelUpDown.Name = "ServerLevelUpDown";
-            ServerLevelUpDown.Size = new Size(55, 23);
-            ServerLevelUpDown.TabIndex = 43;
-            ServerLevelUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // LavaLvTb
             // 
@@ -471,16 +397,228 @@
             connectButton.TabIndex = 56;
             connectButton.Text = "Connect";
             connectButton.UseVisualStyleBackColor = true;
+            connectButton.Visible = false;
             connectButton.Click += connectButton_Click;
+            // 
+            // AutoFillButton
+            // 
+            AutoFillButton.Enabled = false;
+            AutoFillButton.Location = new Point(277, 386);
+            AutoFillButton.Name = "AutoFillButton";
+            AutoFillButton.Size = new Size(92, 23);
+            AutoFillButton.TabIndex = 60;
+            AutoFillButton.Text = "Auto-Fill";
+            AutoFillButton.UseVisualStyleBackColor = true;
+            AutoFillButton.Click += AutoFillButton_Click;
+            // 
+            // chatPanel
+            // 
+            chatPanel.BackColor = Color.FromArgb(30, 30, 30);
+            chatPanel.Controls.Add(chatLog);
+            chatPanel.ForeColor = Color.White;
+            chatPanel.Location = new Point(316, 12);
+            chatPanel.Name = "chatPanel";
+            chatPanel.Size = new Size(576, 452);
+            chatPanel.TabIndex = 61;
+            chatPanel.TabStop = false;
+            chatPanel.Text = "CHAT LOG";
+            // 
+            // chatLog
+            // 
+            chatLog.BackColor = Color.FromArgb(28, 28, 28);
+            chatLog.BorderStyle = BorderStyle.FixedSingle;
+            chatLog.Dock = DockStyle.Fill;
+            chatLog.Font = new Font("Segoe UI", 9F);
+            chatLog.ForeColor = Color.White;
+            chatLog.FormattingEnabled = true;
+            chatLog.HorizontalScrollbar = true;
+            chatLog.ItemHeight = 15;
+            chatLog.Location = new Point(3, 19);
+            chatLog.Name = "chatLog";
+            chatLog.Size = new Size(570, 430);
+            chatLog.TabIndex = 0;
+            // 
+            // onlinePlayersPanel
+            // 
+            onlinePlayersPanel.BackColor = Color.FromArgb(30, 30, 30);
+            onlinePlayersPanel.Controls.Add(playerDetails);
+            onlinePlayersPanel.Controls.Add(onlinePlayersList);
+            onlinePlayersPanel.ForeColor = Color.White;
+            onlinePlayersPanel.Location = new Point(12, 12);
+            onlinePlayersPanel.Name = "onlinePlayersPanel";
+            onlinePlayersPanel.Size = new Size(292, 452);
+            onlinePlayersPanel.TabIndex = 62;
+            onlinePlayersPanel.TabStop = false;
+            onlinePlayersPanel.Text = "ONLINE PLAYERS";
+            // 
+            // playerDetails
+            // 
+            playerDetails.BackColor = Color.FromArgb(20, 20, 20);
+            playerDetails.BorderStyle = BorderStyle.FixedSingle;
+            playerDetails.Font = new Font("Segoe UI", 9F);
+            playerDetails.ForeColor = Color.White;
+            playerDetails.Location = new Point(8, 235);
+            playerDetails.Name = "playerDetails";
+            playerDetails.Padding = new Padding(8);
+            playerDetails.Size = new Size(276, 207);
+            playerDetails.TabIndex = 1;
+            playerDetails.Text = "Select a player to view profile details.";
+            // 
+            // onlinePlayersList
+            // 
+            onlinePlayersList.BackColor = Color.FromArgb(28, 28, 28);
+            onlinePlayersList.BorderStyle = BorderStyle.FixedSingle;
+            onlinePlayersList.ForeColor = Color.White;
+            onlinePlayersList.FormattingEnabled = true;
+            onlinePlayersList.ItemHeight = 15;
+            onlinePlayersList.Location = new Point(8, 22);
+            onlinePlayersList.Name = "onlinePlayersList";
+            onlinePlayersList.Size = new Size(276, 197);
+            onlinePlayersList.TabIndex = 0;
+            onlinePlayersList.SelectedIndexChanged += OnlinePlayersList_SelectedIndexChanged;
+            // 
+            // mainTabs
+            // 
+            mainTabs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mainTabs.Controls.Add(editorTab);
+            mainTabs.Font = new Font("Segoe UI", 9F);
+            mainTabs.Location = new Point(0, 38);
+            mainTabs.Name = "mainTabs";
+            mainTabs.Padding = new Point(18, 6);
+            mainTabs.SelectedIndex = 0;
+            mainTabs.Size = new Size(920, 484);
+            mainTabs.TabIndex = 63;
+            // 
+            // editorTab
+            // 
+            editorTab.BackColor = Color.FromArgb(184, 190, 196);
+            editorTab.BackgroundImage = Properties.Resources.background;
+            editorTab.BackgroundImageLayout = ImageLayout.Stretch;
+            editorTab.Controls.Add(label1);
+            editorTab.Controls.Add(label2);
+            editorTab.Controls.Add(serverNameLbl);
+            editorTab.Controls.Add(levelLbl);
+            editorTab.Controls.Add(label3);
+            editorTab.Controls.Add(ServerNameTextBox);
+            editorTab.Controls.Add(ServerNameEditButton);
+            editorTab.Controls.Add(label4);
+            editorTab.Controls.Add(ServerLevelUpDown);
+            editorTab.Controls.Add(ServerLevelEditButton);
+            editorTab.Controls.Add(helloMsgButton);
+            editorTab.Controls.Add(helloMsgTB);
+            editorTab.Controls.Add(helloMsgBtn);
+            editorTab.Controls.Add(serverStatusPB);
+            editorTab.Location = new Point(4, 30);
+            editorTab.Name = "editorTab";
+            editorTab.Padding = new Padding(8);
+            editorTab.Size = new Size(912, 450);
+            editorTab.TabIndex = 0;
+            editorTab.Text = "Area Server Editor";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(30, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Town Name:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(30, 74);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Server Level:";
+            // 
+            // serverNameLbl
+            // 
+            serverNameLbl.AutoSize = true;
+            serverNameLbl.Location = new Point(112, 51);
+            serverNameLbl.Name = "serverNameLbl";
+            serverNameLbl.Size = new Size(78, 15);
+            serverNameLbl.TabIndex = 4;
+            serverNameLbl.Text = "Unconnected";
+            serverNameLbl.Click += serverNameLbl_Click;
+            // 
+            // levelLbl
+            // 
+            levelLbl.AutoSize = true;
+            levelLbl.Location = new Point(112, 74);
+            levelLbl.Name = "levelLbl";
+            levelLbl.Size = new Size(13, 15);
+            levelLbl.TabIndex = 5;
+            levelLbl.Text = "0";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(25, 127);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Town Name:";
+            // 
+            // ServerNameTextBox
+            // 
+            ServerNameTextBox.Location = new Point(104, 123);
+            ServerNameTextBox.MaxLength = 20;
+            ServerNameTextBox.Name = "ServerNameTextBox";
+            ServerNameTextBox.Size = new Size(155, 23);
+            ServerNameTextBox.TabIndex = 6;
+            // 
+            // ServerNameEditButton
+            // 
+            ServerNameEditButton.Enabled = false;
+            ServerNameEditButton.Location = new Point(265, 123);
+            ServerNameEditButton.Name = "ServerNameEditButton";
+            ServerNameEditButton.Size = new Size(75, 23);
+            ServerNameEditButton.TabIndex = 40;
+            ServerNameEditButton.Text = "Apply";
+            ServerNameEditButton.UseVisualStyleBackColor = true;
+            ServerNameEditButton.Click += ServerNameEditButton_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(26, 164);
+            label4.Name = "label4";
+            label4.Size = new Size(72, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Server Level:";
+            // 
+            // ServerLevelUpDown
+            // 
+            ServerLevelUpDown.Location = new Point(104, 160);
+            ServerLevelUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            ServerLevelUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            ServerLevelUpDown.Name = "ServerLevelUpDown";
+            ServerLevelUpDown.Size = new Size(55, 23);
+            ServerLevelUpDown.TabIndex = 43;
+            ServerLevelUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // ServerLevelEditButton
+            // 
+            ServerLevelEditButton.Enabled = false;
+            ServerLevelEditButton.Location = new Point(165, 160);
+            ServerLevelEditButton.Name = "ServerLevelEditButton";
+            ServerLevelEditButton.Size = new Size(75, 23);
+            ServerLevelEditButton.TabIndex = 41;
+            ServerLevelEditButton.Text = "Apply";
+            ServerLevelEditButton.UseVisualStyleBackColor = true;
+            ServerLevelEditButton.Click += ServerLevelEditButton_Click;
             // 
             // helloMsgButton
             // 
             helloMsgButton.AutoSize = true;
-            helloMsgButton.Location = new Point(26, 200);
+            helloMsgButton.Location = new Point(29, 201);
             helloMsgButton.Name = "helloMsgButton";
             helloMsgButton.Size = new Size(64, 15);
             helloMsgButton.TabIndex = 57;
             helloMsgButton.Text = "Hello Msg:";
+            helloMsgButton.Click += helloMsgButton_Click;
             // 
             // helloMsgTB
             // 
@@ -501,82 +639,271 @@
             helloMsgBtn.UseVisualStyleBackColor = true;
             helloMsgBtn.Click += helloMsgBtn_Click;
             // 
-            // AutoFillButton
+            // serverStatusPB
             // 
-            AutoFillButton.Enabled = false;
-            AutoFillButton.Location = new Point(277, 386);
-            AutoFillButton.Name = "AutoFillButton";
-            AutoFillButton.Size = new Size(92, 23);
-            AutoFillButton.TabIndex = 60;
-            AutoFillButton.Text = "Auto-Fill";
-            AutoFillButton.UseVisualStyleBackColor = true;
-            AutoFillButton.Click += AutoFillButton_Click;
+            serverStatusPB.BackgroundImageLayout = ImageLayout.None;
+            serverStatusPB.Image = Properties.Resources.bg_window_offline;
+            serverStatusPB.Location = new Point(12, 12);
+            serverStatusPB.Name = "serverStatusPB";
+            serverStatusPB.Size = new Size(342, 363);
+            serverStatusPB.TabIndex = 1;
+            serverStatusPB.TabStop = false;
+            serverStatusPB.Click += serverStatusPB_Click;
             // 
-            // chatPanel
+            // landTab
             // 
-            chatPanel.BackColor = Color.FromArgb(30, 30, 30);
-            chatPanel.Controls.Add(chatLog);
-            chatPanel.ForeColor = Color.White;
-            chatPanel.Location = new Point(1070, 12);
-            chatPanel.Name = "chatPanel";
-            chatPanel.Size = new Size(330, 424);
-            chatPanel.TabIndex = 61;
-            chatPanel.TabStop = false;
-            chatPanel.Text = "CHAT LOG";
+            landTab.BackColor = Color.FromArgb(184, 190, 196);
+            landTab.BackgroundImage = Properties.Resources.background;
+            landTab.BackgroundImageLayout = ImageLayout.Stretch;
+            landTab.Controls.Add(label5);
+            landTab.Controls.Add(label6);
+            landTab.Controls.Add(label7);
+            landTab.Controls.Add(label8);
+            landTab.Controls.Add(label9);
+            landTab.Controls.Add(label10);
+            landTab.Controls.Add(label11);
+            landTab.Controls.Add(label12);
+            landTab.Controls.Add(label13);
+            landTab.Controls.Add(label14);
+            landTab.Controls.Add(label15);
+            landTab.Controls.Add(label16);
+            landTab.Controls.Add(LavaLvTb);
+            landTab.Controls.Add(FieryLvTb);
+            landTab.Controls.Add(SandLvTb);
+            landTab.Controls.Add(DesertLvTb);
+            landTab.Controls.Add(WoodsLvTb);
+            landTab.Controls.Add(SnowLvTb);
+            landTab.Controls.Add(IceLvTb);
+            landTab.Controls.Add(RockyLvTb);
+            landTab.Controls.Add(PlainsLvTb);
+            landTab.Controls.Add(SwampLvTb);
+            landTab.Controls.Add(GrassLvTb);
+            landTab.Controls.Add(machiveLvTb);
+            landTab.Controls.Add(AutoFillButton);
+            landTab.Controls.Add(LandSettingsApplyButton);
+            landTab.Controls.Add(pictureBox3);
+            landTab.Location = new Point(4, 32);
+            landTab.Name = "landTab";
+            landTab.Padding = new Padding(8);
+            landTab.Size = new Size(912, 484);
+            landTab.TabIndex = 1;
+            landTab.Text = "Land Settings";
             // 
-            // chatLog
+            // logsTab
             // 
-            chatLog.BackColor = Color.FromArgb(28, 28, 28);
-            chatLog.BorderStyle = BorderStyle.FixedSingle;
-            chatLog.Dock = DockStyle.Fill;
-            chatLog.Font = new Font("Segoe UI", 9F);
-            chatLog.ForeColor = Color.White;
-            chatLog.FormattingEnabled = true;
-            chatLog.HorizontalScrollbar = true;
-            chatLog.ItemHeight = 15;
-            chatLog.Location = new Point(3, 19);
-            chatLog.Name = "chatLog";
-            chatLog.Size = new Size(324, 402);
-            chatLog.TabIndex = 0;
+            logsTab.BackColor = Color.FromArgb(184, 190, 196);
+            logsTab.Controls.Add(onlinePlayersPanel);
+            logsTab.Controls.Add(chatPanel);
+            logsTab.Location = new Point(4, 32);
+            logsTab.Name = "logsTab";
+            logsTab.Padding = new Padding(8);
+            logsTab.Size = new Size(912, 484);
+            logsTab.TabIndex = 2;
+            logsTab.Text = "Logs";
             // 
-            // onlinePlayersPanel
+            // eventTab
             // 
-            onlinePlayersPanel.BackColor = Color.FromArgb(30, 30, 30);
-            onlinePlayersPanel.Controls.Add(playerDetails);
-            onlinePlayersPanel.Controls.Add(onlinePlayersList);
-            onlinePlayersPanel.ForeColor = Color.White;
-            onlinePlayersPanel.Location = new Point(812, 12);
-            onlinePlayersPanel.Name = "onlinePlayersPanel";
-            onlinePlayersPanel.Size = new Size(250, 424);
-            onlinePlayersPanel.TabIndex = 62;
-            onlinePlayersPanel.TabStop = false;
-            onlinePlayersPanel.Text = "ONLINE PLAYERS";
+            eventTab.BackColor = Color.FromArgb(184, 190, 196);
+            eventTab.BackgroundImage = Properties.Resources.background;
+            eventTab.BackgroundImageLayout = ImageLayout.Stretch;
+            eventTab.Controls.Add(specialEventPanel);
+            eventTab.Location = new Point(4, 32);
+            eventTab.Name = "eventTab";
+            eventTab.Padding = new Padding(8);
+            eventTab.Size = new Size(912, 484);
+            eventTab.TabIndex = 3;
+            eventTab.Text = "Event System";
             // 
-            // onlinePlayersList
+            // specialEventPanel
             // 
-            onlinePlayersList.BackColor = Color.FromArgb(28, 28, 28);
-            onlinePlayersList.BorderStyle = BorderStyle.FixedSingle;
-            onlinePlayersList.ForeColor = Color.White;
-            onlinePlayersList.FormattingEnabled = true;
-            onlinePlayersList.ItemHeight = 15;
-            onlinePlayersList.Location = new Point(8, 22);
-            onlinePlayersList.Name = "onlinePlayersList";
-            onlinePlayersList.Size = new Size(234, 188);
-            onlinePlayersList.TabIndex = 0;
-            onlinePlayersList.SelectedIndexChanged += OnlinePlayersList_SelectedIndexChanged;
+            specialEventPanel.BackColor = Color.FromArgb(30, 30, 30);
+            specialEventPanel.Controls.Add(eventDescription);
+            specialEventPanel.Controls.Add(specialEventSelector);
+            specialEventPanel.Controls.Add(applyEventButton);
+            specialEventPanel.Controls.Add(useRealDateButton);
+            specialEventPanel.Controls.Add(specialEventStatus);
+            specialEventPanel.ForeColor = Color.White;
+            specialEventPanel.Location = new Point(18, 18);
+            specialEventPanel.Name = "specialEventPanel";
+            specialEventPanel.Size = new Size(410, 330);
+            specialEventPanel.TabIndex = 0;
+            specialEventPanel.TabStop = false;
+            specialEventPanel.Text = "SPECIAL EVENTS";
             // 
-            // playerDetails
+            // eventDescription
             // 
-            playerDetails.BackColor = Color.FromArgb(20, 20, 20);
-            playerDetails.BorderStyle = BorderStyle.FixedSingle;
-            playerDetails.Font = new Font("Segoe UI", 9F);
-            playerDetails.ForeColor = Color.White;
-            playerDetails.Location = new Point(8, 218);
-            playerDetails.Name = "playerDetails";
-            playerDetails.Padding = new Padding(8);
-            playerDetails.Size = new Size(234, 196);
-            playerDetails.TabIndex = 1;
-            playerDetails.Text = "Select a player to view profile details.";
+            eventDescription.ForeColor = Color.White;
+            eventDescription.Location = new Point(12, 28);
+            eventDescription.Name = "eventDescription";
+            eventDescription.Size = new Size(382, 48);
+            eventDescription.TabIndex = 0;
+            eventDescription.Text = "SELECT SERVER EVENT";
+            // 
+            // specialEventSelector
+            // 
+            specialEventSelector.DropDownStyle = ComboBoxStyle.DropDownList;
+            specialEventSelector.Location = new Point(12, 88);
+            specialEventSelector.Name = "specialEventSelector";
+            specialEventSelector.Size = new Size(382, 23);
+            specialEventSelector.TabIndex = 1;
+            // 
+            // applyEventButton
+            // 
+            applyEventButton.ForeColor = Color.Black;
+            applyEventButton.Location = new Point(12, 126);
+            applyEventButton.Name = "applyEventButton";
+            applyEventButton.Size = new Size(180, 30);
+            applyEventButton.TabIndex = 2;
+            applyEventButton.Text = "Apply Event";
+            applyEventButton.UseVisualStyleBackColor = true;
+            // 
+            // useRealDateButton
+            // 
+            useRealDateButton.ForeColor = Color.Black;
+            useRealDateButton.Location = new Point(214, 126);
+            useRealDateButton.Name = "useRealDateButton";
+            useRealDateButton.Size = new Size(180, 30);
+            useRealDateButton.TabIndex = 3;
+            useRealDateButton.Text = "Use Real Date";
+            useRealDateButton.UseVisualStyleBackColor = true;
+            // 
+            // specialEventStatus
+            // 
+            specialEventStatus.ForeColor = Color.LightGreen;
+            specialEventStatus.Location = new Point(12, 178);
+            specialEventStatus.Name = "specialEventStatus";
+            specialEventStatus.Size = new Size(382, 110);
+            specialEventStatus.TabIndex = 4;
+            specialEventStatus.Text = "Real system date is active.";
+            // 
+            // miscTab
+            // 
+            miscTab.BackColor = Color.FromArgb(184, 190, 196);
+            miscTab.BackgroundImage = Properties.Resources.background;
+            miscTab.BackgroundImageLayout = ImageLayout.Stretch;
+            miscTab.Controls.Add(miscPanel);
+            miscTab.Location = new Point(4, 24);
+            miscTab.Name = "miscTab";
+            miscTab.Padding = new Padding(8);
+            miscTab.Size = new Size(410, 280);
+            miscTab.TabIndex = 0;
+            miscTab.Text = "Miscs";
+            // 
+            // miscPanel
+            // 
+            miscPanel.BackColor = Color.FromArgb(30, 30, 30);
+            miscPanel.Controls.Add(chatTimestampsCheckBox);
+            miscPanel.Controls.Add(clearChatButton);
+            miscPanel.Controls.Add(saveChatButton);
+            miscPanel.Controls.Add(miscPlayerCountLabel);
+            miscPanel.ForeColor = Color.White;
+            miscPanel.Location = new Point(14, 14);
+            miscPanel.Name = "miscPanel";
+            miscPanel.Size = new Size(370, 220);
+            miscPanel.TabIndex = 0;
+            miscPanel.TabStop = false;
+            miscPanel.Text = "MISC TOOLS";
+            // 
+            // chatTimestampsCheckBox
+            // 
+            chatTimestampsCheckBox.AutoSize = true;
+            chatTimestampsCheckBox.Checked = true;
+            chatTimestampsCheckBox.CheckState = CheckState.Checked;
+            chatTimestampsCheckBox.Location = new Point(16, 34);
+            chatTimestampsCheckBox.Name = "chatTimestampsCheckBox";
+            chatTimestampsCheckBox.Size = new Size(184, 19);
+            chatTimestampsCheckBox.TabIndex = 0;
+            chatTimestampsCheckBox.Text = "Show timestamps in Chat Log";
+            chatTimestampsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // clearChatButton
+            // 
+            clearChatButton.Location = new Point(16, 72);
+            clearChatButton.Name = "clearChatButton";
+            clearChatButton.Size = new Size(155, 30);
+            clearChatButton.TabIndex = 1;
+            clearChatButton.Text = "Clear Chat Log";
+            clearChatButton.UseVisualStyleBackColor = true;
+            // 
+            // saveChatButton
+            // 
+            saveChatButton.Location = new Point(193, 72);
+            saveChatButton.Name = "saveChatButton";
+            saveChatButton.Size = new Size(155, 30);
+            saveChatButton.TabIndex = 2;
+            saveChatButton.Text = "Save Chat Log...";
+            saveChatButton.UseVisualStyleBackColor = true;
+            // 
+            // miscPlayerCountLabel
+            // 
+            miscPlayerCountLabel.AutoSize = true;
+            miscPlayerCountLabel.ForeColor = Color.LightGreen;
+            miscPlayerCountLabel.Location = new Point(16, 126);
+            miscPlayerCountLabel.Name = "miscPlayerCountLabel";
+            miscPlayerCountLabel.Size = new Size(94, 15);
+            miscPlayerCountLabel.TabIndex = 3;
+            miscPlayerCountLabel.Text = "Online players: 0";
+            // 
+            // toolBarPanel
+            // 
+            toolBarPanel.BackColor = Color.FromArgb(184, 190, 196);
+            toolBarPanel.Controls.Add(areaEditorButton);
+            toolBarPanel.Controls.Add(landSettingsButton);
+            toolBarPanel.Controls.Add(logsButton);
+            toolBarPanel.Controls.Add(eventSystemButton);
+            toolBarPanel.Controls.Add(miscsButton);
+            toolBarPanel.Dock = DockStyle.Top;
+            toolBarPanel.Location = new Point(0, 0);
+            toolBarPanel.Name = "toolBarPanel";
+            toolBarPanel.Size = new Size(920, 36);
+            toolBarPanel.TabIndex = 64;
+            // 
+            // areaEditorButton
+            // 
+            areaEditorButton.Location = new Point(8, 5);
+            areaEditorButton.Name = "areaEditorButton";
+            areaEditorButton.Size = new Size(145, 27);
+            areaEditorButton.TabIndex = 0;
+            areaEditorButton.Text = "Area Server Editor";
+            areaEditorButton.UseVisualStyleBackColor = true;
+            // 
+            // landSettingsButton
+            // 
+            landSettingsButton.Location = new Point(159, 5);
+            landSettingsButton.Name = "landSettingsButton";
+            landSettingsButton.Size = new Size(120, 27);
+            landSettingsButton.TabIndex = 1;
+            landSettingsButton.Text = "Land Settings";
+            landSettingsButton.UseVisualStyleBackColor = true;
+            landSettingsButton.Click += landSettingsButton_Click;
+            // 
+            // logsButton
+            // 
+            logsButton.Location = new Point(285, 5);
+            logsButton.Name = "logsButton";
+            logsButton.Size = new Size(82, 27);
+            logsButton.TabIndex = 2;
+            logsButton.Text = "Logs";
+            logsButton.UseVisualStyleBackColor = true;
+            // 
+            // eventSystemButton
+            // 
+            eventSystemButton.Location = new Point(373, 5);
+            eventSystemButton.Name = "eventSystemButton";
+            eventSystemButton.Size = new Size(118, 27);
+            eventSystemButton.TabIndex = 3;
+            eventSystemButton.Text = "Event System";
+            eventSystemButton.UseVisualStyleBackColor = true;
+            // 
+            // miscsButton
+            // 
+            miscsButton.Location = new Point(497, 5);
+            miscsButton.Name = "miscsButton";
+            miscsButton.Size = new Size(82, 27);
+            miscsButton.TabIndex = 4;
+            miscsButton.Text = "Miscs";
+            miscsButton.UseVisualStyleBackColor = true;
+            miscsButton.Visible = false;
             // 
             // Form1
             // 
@@ -584,62 +911,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1412, 448);
-            Controls.Add(onlinePlayersPanel);
-            Controls.Add(chatPanel);
-            Controls.Add(AutoFillButton);
-            Controls.Add(helloMsgBtn);
-            Controls.Add(helloMsgTB);
-            Controls.Add(helloMsgButton);
-            Controls.Add(connectButton);
-            Controls.Add(machiveLvTb);
-            Controls.Add(GrassLvTb);
-            Controls.Add(SwampLvTb);
-            Controls.Add(PlainsLvTb);
-            Controls.Add(RockyLvTb);
-            Controls.Add(IceLvTb);
-            Controls.Add(SnowLvTb);
-            Controls.Add(WoodsLvTb);
-            Controls.Add(DesertLvTb);
-            Controls.Add(SandLvTb);
-            Controls.Add(FieryLvTb);
-            Controls.Add(LavaLvTb);
-            Controls.Add(ServerLevelUpDown);
-            Controls.Add(LandSettingsApplyButton);
-            Controls.Add(ServerLevelEditButton);
-            Controls.Add(ServerNameEditButton);
-            Controls.Add(label16);
-            Controls.Add(label15);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(pictureBox3);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(ServerNameTextBox);
-            Controls.Add(levelLbl);
-            Controls.Add(serverNameLbl);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(serverStatusPB);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(920, 520);
+            Controls.Add(mainTabs);
+            Controls.Add(toolBarPanel);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            MinimumSize = new Size(1428, 487);
+            MinimumSize = new Size(936, 559);
             Name = "Form1";
-            Text = "Area Server Manager v1.0 by reaksiyon1337";
+            Text = "Area Server Manager v2.0 by reaksiyon1337";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)serverStatusPB).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ServerLevelUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)LavaLvTb).EndInit();
             ((System.ComponentModel.ISupportInitialize)FieryLvTb).EndInit();
             ((System.ComponentModel.ISupportInitialize)SandLvTb).EndInit();
@@ -654,8 +936,21 @@
             ((System.ComponentModel.ISupportInitialize)PlainsLvTb).EndInit();
             chatPanel.ResumeLayout(false);
             onlinePlayersPanel.ResumeLayout(false);
+            mainTabs.ResumeLayout(false);
+            editorTab.ResumeLayout(false);
+            editorTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ServerLevelUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)serverStatusPB).EndInit();
+            landTab.ResumeLayout(false);
+            landTab.PerformLayout();
+            logsTab.ResumeLayout(false);
+            eventTab.ResumeLayout(false);
+            specialEventPanel.ResumeLayout(false);
+            miscTab.ResumeLayout(false);
+            miscPanel.ResumeLayout(false);
+            miscPanel.PerformLayout();
+            toolBarPanel.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -666,14 +961,6 @@
         private GroupBox onlinePlayersPanel;
         private ListBox onlinePlayersList;
         private Label playerDetails;
-        private PictureBox serverStatusPB;
-        private Label label1;
-        private Label label2;
-        private Label serverNameLbl;
-        private Label levelLbl;
-        private TextBox ServerNameTextBox;
-        private Label label3;
-        private Label label4;
         private PictureBox pictureBox3;
         private Label label5;
         private Label label6;
@@ -687,10 +974,7 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private Button ServerNameEditButton;
-        private Button ServerLevelEditButton;
         private Button LandSettingsApplyButton;
-        private NumericUpDown ServerLevelUpDown;
         private NumericUpDown LavaLvTb;
         private NumericUpDown FieryLvTb;
         private NumericUpDown SandLvTb;
@@ -704,9 +988,43 @@
         private NumericUpDown SwampLvTb;
         private NumericUpDown PlainsLvTb;
         private Button connectButton;
+        private Button AutoFillButton;
+        private TabControl mainTabs;
+        private TabPage landTab;
+        private TabPage logsTab;
+        private TabPage eventTab;
+        private GroupBox specialEventPanel;
+        private Label eventDescription;
+        private ComboBox specialEventSelector;
+        private Button applyEventButton;
+        private Button useRealDateButton;
+        private Label specialEventStatus;
+        private TabPage miscTab;
+        private GroupBox miscPanel;
+        private CheckBox chatTimestampsCheckBox;
+        private Button clearChatButton;
+        private Button saveChatButton;
+        private Label miscPlayerCountLabel;
+        private Panel toolBarPanel;
+        private Button areaEditorButton;
+        private Button landSettingsButton;
+        private Button logsButton;
+        private Button eventSystemButton;
+        private Button miscsButton;
+        private TabPage editorTab;
+        private Label label1;
+        private Label label2;
+        private Label serverNameLbl;
+        private Label levelLbl;
+        private Label label3;
+        private TextBox ServerNameTextBox;
+        private Button ServerNameEditButton;
+        private Label label4;
+        private NumericUpDown ServerLevelUpDown;
+        private Button ServerLevelEditButton;
         private Label helloMsgButton;
         private TextBox helloMsgTB;
         private Button helloMsgBtn;
-        private Button AutoFillButton;
+        private PictureBox serverStatusPB;
     }
 }

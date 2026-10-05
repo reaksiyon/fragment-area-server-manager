@@ -47,8 +47,8 @@ namespace AreaServerLevelEditor
         private const int MEMORY_ADDRESS = 0x0EB37B3C - 4;
 
 
-        public static Process process;
-        public static Process[] processes;
+        public static Process? process;
+        public static Process[] processes = Array.Empty<Process>();
         public static IntPtr processHandle;
         public static IntPtr baseAddressFromExe;
 
@@ -66,24 +66,24 @@ namespace AreaServerLevelEditor
 
         public static void Inject()
         {
-            const int PROCESS_VM_READ = 0x0010;
+            TryAttachToAreaServer();
+        }
 
-            string processName = "AREA SERVER";
-
-            processes = Process.GetProcessesByName(processName);
+        public static bool TryAttachToAreaServer(bool showError = true)
+        {
+            processes = Process.GetProcessesByName("AREA SERVER");
 
             if (processes.Length == 0)
             {
-                MessageBox.Show("ERROR 1004 - Please Open AREA SERVER First!", "Process Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                Environment.Exit(0);
-
-                return;
+                process = null;
+                processHandle = IntPtr.Zero;
+                return false;
             }
 
             process = processes[0];
             processHandle = process.Handle;
             baseAddressFromExe = process.MainModule.BaseAddress;
+            return true;
         }
 
         public static void ReloadUI()
@@ -240,9 +240,16 @@ namespace AreaServerLevelEditor
         {
             if (processes.Length > 0)
             {
-                IntPtr baseAddress = (IntPtr)(baseAddressFromExe + 0x29F1EC);
+                string[] candidates =
+                {
+                    GetNameAtAddress((IntPtr)(baseAddressFromExe + 0x29F1EC)),
+                    GetNameAtAddress((IntPtr)(baseAddressFromExe + 0x29F1EB))
+                };
 
-                return GetNameAtAddress(baseAddress);
+                return candidates
+                    .Where(name => !string.IsNullOrWhiteSpace(name) && name.All(c => c >= 32 && c < 127))
+                    .OrderByDescending(name => name.Length)
+                    .FirstOrDefault() ?? string.Empty;
             }
             else
             {
