@@ -33,3 +33,4 @@ C:\Projects\fragment-area-server-manager\obj\Release\net8.0-windows\refint\AreaS
 C:\Projects\fragment-area-server-manager\obj\Release\net8.0-windows\AreaServerLevelEditor.pdb
 C:\Projects\fragment-area-server-manager\obj\Release\net8.0-windows\AreaServerLevelEditor.genruntimeconfig.cache
 C:\Projects\fragment-area-server-manager\obj\Release\net8.0-windows\ref\AreaServerLevelEditor.dll
+C:\Projects\fragment-area-server-manager\obj\Release\net8.0-windows\AreaServerLevelEditor.FloatingToolWindow.resources

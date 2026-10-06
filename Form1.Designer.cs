@@ -60,6 +60,8 @@
             chatPanel = new GroupBox();
             chatLog = new ListBox();
             onlinePlayersPanel = new GroupBox();
+            playerHistoryLabel = new Label();
+            playerHistoryList = new ListBox();
             playerDetails = new Label();
             onlinePlayersList = new ListBox();
             mainTabs = new TabControl();
@@ -442,6 +444,8 @@
             // 
             onlinePlayersPanel.BackColor = Color.FromArgb(30, 30, 30);
             onlinePlayersPanel.Controls.Add(playerDetails);
+            onlinePlayersPanel.Controls.Add(playerHistoryList);
+            onlinePlayersPanel.Controls.Add(playerHistoryLabel);
             onlinePlayersPanel.Controls.Add(onlinePlayersList);
             onlinePlayersPanel.ForeColor = Color.White;
             onlinePlayersPanel.Location = new Point(12, 12);
@@ -457,12 +461,35 @@
             playerDetails.BorderStyle = BorderStyle.FixedSingle;
             playerDetails.Font = new Font("Segoe UI", 9F);
             playerDetails.ForeColor = Color.White;
-            playerDetails.Location = new Point(8, 235);
+            playerDetails.Location = new Point(8, 348);
             playerDetails.Name = "playerDetails";
             playerDetails.Padding = new Padding(8);
-            playerDetails.Size = new Size(276, 207);
+            playerDetails.Size = new Size(276, 94);
             playerDetails.TabIndex = 1;
             playerDetails.Text = "Select a player to view profile details.";
+            // 
+            // playerHistoryLabel
+            // 
+            playerHistoryLabel.AutoSize = false;
+            playerHistoryLabel.ForeColor = Color.LightGreen;
+            playerHistoryLabel.Location = new Point(8, 222);
+            playerHistoryLabel.Name = "playerHistoryLabel";
+            playerHistoryLabel.Size = new Size(276, 18);
+            playerHistoryLabel.TabIndex = 2;
+            playerHistoryLabel.Text = "PLAYER HISTORY";
+            // 
+            // playerHistoryList
+            // 
+            playerHistoryList.BackColor = Color.FromArgb(28, 28, 28);
+            playerHistoryList.BorderStyle = BorderStyle.FixedSingle;
+            playerHistoryList.ForeColor = Color.White;
+            playerHistoryList.FormattingEnabled = true;
+            playerHistoryList.ItemHeight = 15;
+            playerHistoryList.Location = new Point(8, 242);
+            playerHistoryList.Name = "playerHistoryList";
+            playerHistoryList.Size = new Size(276, 97);
+            playerHistoryList.TabIndex = 3;
+            playerHistoryList.SelectedIndexChanged += PlayerHistoryList_SelectedIndexChanged;
             // 
             // onlinePlayersList
             // 
@@ -961,6 +988,8 @@
         private GroupBox onlinePlayersPanel;
         private ListBox onlinePlayersList;
         private Label playerDetails;
+        private Label playerHistoryLabel;
+        private ListBox playerHistoryList;
         private PictureBox pictureBox3;
         private Label label5;
         private Label label6;

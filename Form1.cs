@@ -10,6 +10,7 @@ namespace AreaServerLevelEditor
         private FloatingToolWindow? eventWindow;
         private FloatingToolWindow? miscWindow;
         private readonly Dictionary<int, PlayerProfile> onlinePlayers = new();
+        private readonly Dictionary<string, PlayerProfile> playerHistory = new(StringComparer.OrdinalIgnoreCase);
         private static readonly (string Name, string Date)[] SpecialEvents =
         {
             ("New Year's Day", "01-01"),
@@ -40,6 +41,7 @@ namespace AreaServerLevelEditor
             statusTimer.Tick += async (_, _) =>
             {
                 RefreshServerStatus();
+                RefreshOnlinePlayersView();
                 if (packetLogger is not null)
                     await packetLogger.StartAsync();
             };
@@ -80,6 +82,8 @@ namespace AreaServerLevelEditor
             chatPanel.Width = 576;
             chatPanel.Height = 452;
             onlinePlayersPanel.Height = 452;
+            playerHistoryLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            playerHistoryList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             onlinePlayersList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             playerDetails.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chatLog.Dock = DockStyle.Fill;
@@ -230,6 +234,7 @@ namespace AreaServerLevelEditor
         {
             if (InvokeRequired) { BeginInvoke(() => AddOrUpdatePlayer(profile)); return; }
             onlinePlayers[profile.SocketId] = profile;
+            playerHistory[profile.Nickname] = profile;
             int selectedSocket = onlinePlayersList.SelectedItem is PlayerProfile selected ? selected.SocketId : -1;
             onlinePlayersList.BeginUpdate();
             onlinePlayersList.Items.Clear();
@@ -240,6 +245,7 @@ namespace AreaServerLevelEditor
                     onlinePlayersList.SelectedIndex = index;
             }
             onlinePlayersList.EndUpdate();
+            RefreshPlayerHistoryView();
             miscPlayerCountLabel.Text = $"Online players: {onlinePlayers.Count}";
             ShowSelectedPlayer();
         }
@@ -251,11 +257,50 @@ namespace AreaServerLevelEditor
             onlinePlayersList.Items.Clear();
             foreach (PlayerProfile player in onlinePlayers.Values.OrderBy(p => p.Nickname))
                 onlinePlayersList.Items.Add(player);
+            RefreshPlayerHistoryView();
+            miscPlayerCountLabel.Text = $"Online players: {onlinePlayers.Count}";
+            ShowSelectedPlayer();
+        }
+
+        private void RefreshOnlinePlayersView()
+        {
+            if (InvokeRequired) { BeginInvoke(RefreshOnlinePlayersView); return; }
+            int selectedSocket = onlinePlayersList.SelectedItem is PlayerProfile selected ? selected.SocketId : -1;
+            onlinePlayersList.BeginUpdate();
+            onlinePlayersList.Items.Clear();
+            foreach (PlayerProfile player in onlinePlayers.Values.OrderBy(p => p.Nickname))
+            {
+                int index = onlinePlayersList.Items.Add(player);
+                if (player.SocketId == selectedSocket)
+                    onlinePlayersList.SelectedIndex = index;
+            }
+            onlinePlayersList.EndUpdate();
+            RefreshPlayerHistoryView();
             miscPlayerCountLabel.Text = $"Online players: {onlinePlayers.Count}";
             ShowSelectedPlayer();
         }
 
         private void OnlinePlayersList_SelectedIndexChanged(object? sender, EventArgs e) => ShowSelectedPlayer();
+
+        private void RefreshPlayerHistoryView()
+        {
+            playerHistoryList.BeginUpdate();
+            playerHistoryList.Items.Clear();
+            foreach (PlayerProfile player in playerHistory.Values.OrderBy(p => p.Nickname))
+                playerHistoryList.Items.Add(player);
+            playerHistoryList.EndUpdate();
+        }
+
+        private void PlayerHistoryList_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            if (playerHistoryList.SelectedItem is PlayerProfile player)
+                playerDetails.Text = $"Nickname: {player.Nickname}\r\n" +
+                                     $"Class: {player.ClassName}\r\n" +
+                                     $"Level: {player.Level}\r\n" +
+                                     $"EXP: {player.Experience}/{player.ExperienceRequired}\r\n" +
+                                     $"Gold: {player.Gold}\r\n" +
+                                     $"Model: {player.Model}";
+        }
 
         private void ShowSelectedPlayer()
         {
@@ -316,7 +361,21 @@ namespace AreaServerLevelEditor
                 return;
             }
 
-            serverNameLbl.Text = Program.GetServerName(Program.processes) ?? "Unknown";
+            string serverName = Program.GetServerName(Program.processes) ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(serverName))
+            {
+                serverStatusPB.Image = Properties.Resources.bg_window_offline;
+                serverNameLbl.Text = "Unconnected";
+                levelLbl.Text = "0";
+                ServerNameEditButton.Enabled = false;
+                ServerLevelEditButton.Enabled = false;
+                LandSettingsApplyButton.Enabled = false;
+                helloMsgBtn.Enabled = false;
+                AutoFillButton.Enabled = false;
+                return;
+            }
+
+            serverNameLbl.Text = serverName;
             levelLbl.Text = Program.GetServerLevel().ToString();
             serverStatusPB.Image = Properties.Resources.bg_window3;
             ServerNameEditButton.Enabled = true;
