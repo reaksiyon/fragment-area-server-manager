@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AreaServerLevelEditor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+642652acd38f110680ebfa12181d4d3e486b547e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e831fa22fde350d50d990de6cc85c0a6fdc02df")]
 [assembly: System.Reflection.AssemblyProductAttribute("AreaServerLevelEditor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AreaServerLevelEditor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
